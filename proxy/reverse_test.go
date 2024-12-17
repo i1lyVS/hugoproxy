@@ -9,10 +9,10 @@ import (
 	"testing"
 )
 
-func TestHandleHello(t *testing.T) {
+func TestHandler(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/api/", nil)
 	rr := httptest.NewRecorder()
-	handleHello(rr, req)
+	Handler(rr, req)
 	if rr.Code != http.StatusOK {
 		t.Errorf("expected status %d, got %d", http.StatusNotFound, rr.Code)
 	}

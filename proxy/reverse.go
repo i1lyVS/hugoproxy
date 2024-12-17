@@ -49,3 +49,7 @@ func (rp *ReverseProxy) ReverseProxy(next http.Handler) http.Handler {
 	})
 }
 
+func Handler(w http.ResponseWriter, _ *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Hello from API"))
+}
